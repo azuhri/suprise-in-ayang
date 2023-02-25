@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Quicksand:wght@400;500;600;700&display=swap');
+ * {
+    font-family: "Quicksand";
+ }
+
+ 
+.photo {
+   width: 300px;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 11px -3px grey;
+}
+
+.photoLg {
+   width: 400px;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 11px -3px grey;
+}
+
+.ballon {
+   width: 200px;
+}
+
+.btnP {
+   background-color: #ef476f;
+   color: white;
+}
+
+.mt-5rem {
+   margin: 10rem 0;;
+}
+.containerBallon {
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   top: 17rem;
+   background-color: transparent;
+}
+
+.marginX {
+   margin: 0 5rem;
+}
+
+.m-2rem {
+   margin: 0 10rem;
+}
+
+.w-p {
+   width: 200px;
+}
+
+.btnP:hover {
+   color: white;
+}
+
+.c1 {
+   color: #118ab2;
+}
+
+label {
+   cursor: pointer;
+}
+
+input[type="radio"] {
+   cursor: pointer;
+}
+
+#abizar {
+   position: relative;
+   top: 0;
+   transition: 0.5s;
+}
+
+
+
+/* #ef476f */
+/* ffd166 */
+/* 06d6a0 */
+/* 118ab2 */
+/* 073b4c */

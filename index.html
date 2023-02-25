@@ -7,21 +7,344 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.2/sweetalert2.all.min.js" integrity="sha512-SK3zv9THqmpMz5vgYjzMUplj1kKAkRC6j+xIC0XPcrGKntTmxhYQzgsysgwDq+WKG0CARR1YQKoqGsNlaNMvKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>SUPRISE-IN AYANG</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+
+
+    <div class="app m-4" id="allContainer">
+      <audio controls autoplay class="d-none">
+        <source src="Monkeys-Spinning-Monkeys.mp3" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="text-center" id="containerMessage">
+        <h1>Special Quiz For My Ayang xixixixi 😁</h1>
+        <p>Quiz ini spesial untuk doi saya yang bernama <span class="fw-bold c1">Annisa Nur Adhari</span> fotonya dibawah ini wkkwkw</p>
+        <img src="img/foto_8.jpg" class="photo" alt="">
+      </div>
+      <div id="option" class="text-center"></div>
+      <div class="d-flex justify-content-center" id="containerBtn">
+          <button class="btn btnP my-2 fw-bold" onclick="question1()">Start Quiz</button>
+      </div>
+
+    </div>
+  
+      
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.2/sweetalert2.min.js" integrity="sha512-jSNGQoIZ0qago6DK45skZbDI1JC8bmANSwItgDnMXiAnJm0Lq6QB4yXY8QPKqS68iR3ngZi0pM5+wZvg1kCCKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+      AOS.init();
+      let alert = (title, msg, type) => {
+          Swal.fire({
+          title: title,
+          icon: type,
+          html:
+            `${msg}` +
+            `<audio controls autoplay class="d-none">
+          <source src="negative_beeps-6008.mp3" type="audio/ogg">
+          Your browser does not support the audio element.
+        </audio>`,
+          showCloseButton: false,
+          showCancelButton: false,
+          showConfirmButton: false,
+          timer: 3000,
+        })
+      }
+
+      let awaiting = async (time, func) => {
+        await setTimeout(() => {
+          func
+        }, time);
+      }
+
+      let question1 = () => {
+        let el = ` <div class=>
+                  <audio controls autoplay class="d-none">
+                    <source src="Fluffing-a-Duck.mp3" type="audio/ogg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <h5 class="text-center">Dari dua orang dibawah mana yang lebih gantengan mana?</h5>
+                  <div class="w-100 my-2 d-flex justify-content-center">
+                    <span class="fw-bold mx-3">1</span>
+                    <img src="img/azis.jpeg" class="rounded w-p" alt="">
+                  </div>
+                  <div class="w-100 my-2 d-flex justify-content-center">
+                    <span class="fw-bold mx-3">2</span>
+                    <img src="img/abizar.jpeg" class="rounded w-p" alt="">
+                  </div>
+                  <div class="d-flex justify-content-center mt-4">
+                      <button class="fw-bold mx-2 btn btn-success text-white" onclick="answer1();">Nomor 1 (doi kamu)</button>
+                      <button class="fw-bold mx-2 btn btn-danger text-white" onmouseover="move(this)" data-button="0" id="abizar">Nomor 2 (Abizar)</button>
+                  </div>
+                </div>`;
+          $("#allContainer").html(el);
+          $("#allContainer").hide();
+          $("#allContainer").show(500);
+      }
+
+      let question3 = () => {
+        let el = ` <div class="vh-100 justify-content-center d-flex align-items-center flex-column">
+                  <audio controls autoplay class="d-none">
+                    <source src="Scheming-Weasel-faster.mp3" type="audio/ogg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <h5 class="text-center">Kamu lebih sayang sama <span class="fw-bold">aku</span>, atau sama <span class="fw-bold text-danger">mantanmu</span>? hayooo jawab cepetttt....</h5>
+                  <img src="img/funny-icon2.gif" class="rounded w-p" alt="">
+                  <div class="d-flex justify-content-center mt-4">
+                    <button class="fw-bold mx-2 btn btn-danger text-white" onmouseover="move(this)" data-button="0" id="abizar">Mantanmu</button>
+                    <button class="fw-bold mx-2 btn btn-success text-white" onclick="suprise();">Aku</button>
+                  </div>
+                </div>`;
+          $("#allContainer").html(el);
+          $("#allContainer").hide();
+          $("#allContainer").show(500);
+      }
+
+      let move = (self) => {
+        let height = parseInt($(self).attr("data-button")) == 0 ? 100 : 0;
+        $(self).css("top", `${height}px`);
+        $(self).attr("data-button", height);
+      }
+
+      let answer1 = () => {
+        let el = `<div class="vh-100 justify-content-center d-flex align-items-center flex-column">
+                  <audio controls autoplay class="d-none">
+                    <source src="Sneaky-Snitch.mp3" type="audio/ogg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <h5 class="text-center">Kapan tanggal lahir doi kamu? hayoooo masa gk inget :')</h5>
+                  <img src="img/funny-icon.gif" class="rounded w-p" alt="">
+                  <div class="d-flex justify-content-center">
+                    <input class="text-center mx-1 rounded" id="date" type="text" pattern="\d*" style="width: 70px;" name="tanggal" maxlength="2" placeholder="tanggal">
+                    <input class="text-center mx-1 rounded" id="month" type="text" pattern="\d*" style="width: 70px;" name="bulan" maxlength="2" placeholder="bulan">
+                    <input class="text-center mx-1 rounded" id="year" type="text" pattern="\d*" style="width: 70px;" name="tahun" maxlength="4" placeholder="tahun">
+                  </div>
+                  <div class="w-100 d-flex justify-content-center mt-4">
+                    <button class="btn btn-success px-4 fw-bold" onclick="question2()">Submit</button>
+                  </div>
+                </div>`;
+          $("#allContainer").html(el);
+          $("#allContainer").hide();
+          $("#allContainer").show(500);
+      }
+
+      let question2 = async () => {
+        let tanggal = parseInt($("#date").val());
+        let month = parseInt($("#month").val());
+        let year = parseInt($("#year").val());
+        if(!tanggal) {
+          alert("Di isi yang teliti atuh yang!!!", "Tanggalnya masih kosong atuh!!","error");
+          return;
+        } else if(!month) {
+          alert("Di isi yang teliti atuh yang!!!", "Bulannya masih kosong atuh!!","error");
+          return;
+        } else if(!year) {
+          alert("Di isi yang teliti atuh yang!!!", "Tahunnya masih kosong atuh!!","error");
+          return;
+        }
+        tanggal = tanggal  == 5 ? true : false;
+        month = month  == 8 ? true : false;
+        year = year  == 2001 ? true : false;
+        if(tanggal && year && month ) {
+          question3();
+        } else {
+          $("#date").val("")
+          $("#month").val("")
+          $("#year").val("")
+          alert("Salah woy!!!!", "Masa kamu lupa sih sama ultah-ku yang :'(", "error")
+        }
+      }
+
+      let suprise = () => {
+        let el = `    <div class="d-flex justify-content-center align-items-center flex-column w-100 my-4">
+      <audio controls autoplay class="d-none">
+        <source src="Petra Sihombing ft Ben Sihombing - Mine [Official Music Video].mp3" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
+      <h3 class="fw-bold text-success text-center">Happy Late Birthday Sayangg..... </h3>
+      <h1 class="fw-bold">🥳🥳😘🤗🥰🥰</h1>
+      <img src="img/foto_2.jpg" class="photo" alt="">
+      <div class="w-100 containerBallon">
+        <img src="img/ballon.gif"  class="m-2rem ballon" alt="">
+        <img src="img/ballon.gif" class="m-2rem ballon" alt="">
+      </div>
+      <h5 class="mt-2 p-4 text-center m-2rem">Selamat ulang tahun sayang ku... <span class="fw-bold">Annisa Nur Adhari (icha)</span> Maaf telat buat kasih suprise ke kamu, maaf telah buat kamu kesepian terus, maaf karena aku terlalu sibuk banget yaa ? :'), maapin yakkk.</h5>
+      <h5 class="fw-bold">Doa aku buat kamu: </h5>
+      <ul class="m-2rem">
+        <li>Semoga Alloh beri kamu sehat dan panjang umur</li>
+        <li>Semoga cepet lulus kuliah dengan nilai yang memuaskan dan cepet dapat kerja yang barokah</li>
+        <li>Semoga Alloh selalu jaga kamu dimanapun kamu berada</li>
+        <li>Semoga kamu dipermudah untuk menggapai cita-cita kamu</li>
+        <li>Semoga kamu dapat jodoh yang barokah</li>
+        <li>Semoga kamu jadi wanita yang sholiha sukses dunia dan utamanya sukses akhiratnya, berbakti sama orang tua, dan sayang ke adik-adiknya</li>
+      </ul>
+      <h2 class="fw-bold mb-4">Aamiin.....</h2>
+      <h5 class="fw-bod mt-4">Aku udah ngerangkum dokumentasi yang kemarin</h5>
+      <a href="#containerGalery" class="btn border text fw-bold d-flex flex-column justify-content-center align-items-center">
+        <span class="mb-2">Lihat Galeri </span>
+        <img src="img/arrow-gif.gif" style="width: 50px;" alt="">
+      </a href="#containerGalery">
+    </div>
+
+    <div id="containerGalery" style="margin-top: 50rem;">
+      <div class="row px-4">
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon2.gif" alt="">
+          </div>
+          <img src="img/foto_3.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/azis.jpeg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon8.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon3.gif" alt="">
+          </div>
+          <img src="img/foto_8.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/foto_910.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon5.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon6.gif" alt="">
+          </div>
+          <img src="img/foto_93.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/foto_94.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon7.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon2.gif" alt="">
+          </div>
+          <img src="img/foto_95.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/foto_99.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon9.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon2.gif" alt="">
+          </div>
+          <img src="img/wa.jpeg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/foto_5.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon4.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon6.gif" alt="">
+          </div>
+          <img src="img/new_1.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/new_13.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon7.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon6.gif" alt="">
+          </div>
+          <img src="img/new_2.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/new_12.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon7.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon6.gif" alt="">
+          </div>
+          <img src="img/new_9.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/new_5.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon9.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon6.gif" alt="">
+          </div>
+          <img src="img/new_6.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/new_19.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon4.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon6.gif" alt="">
+          </div>
+          <img src="img/new_18.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/new_11.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon4.gif" alt="">
+          </div>
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-end">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon6.gif" alt="">
+          </div>
+          <img src="img/new_17.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+        </div>
+        <div class="mt-5rem col-md-12 d-flex justify-content-start">
+          <img src="img/new_10.jpg" class="photoLg marginX" alt="" data-aos="fade-up">
+          <div class="d-flex justify-content-center align-items-center w-100">
+            <img style="width: 300px;" data-aos="fade-down" src="img/funny-icon4.gif" alt="">
+          </div>
+        </div>
+      </div>
+      <h3 class="fw-bod text-center mt-5rem">Sekian terikamasih Ayang masih mau setia :')</h3>
+    </div>`;
+          $("#allContainer").html(el);
+          $("#allContainer").hide();
+          $("#allContainer").show(500);
+      }
+
+      
+ 
+    </script>
   </body>
 </html>
